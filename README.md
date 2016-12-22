@@ -1,7 +1,7 @@
 # PokemonClassifier
 Predicts the type of Pokemon from its stats
-This is a submission for <ahref="https://www.youtube.com/watch?v=0xVqLJe9_CY">Siraj's Pokemon Classifier Contest</a>.
-The dataset is taken from <ahref="https://www.kaggle.com/abcsds/pokemon">here in Kaggle</a>.
+This is a submission for Siraj's Pokemon Classifier Contest : https://www.youtube.com/watch?v=0xVqLJe9_CY
+The dataset is taken from Kaggle : https://www.kaggle.com/abcsds/pokemon
 
 # Dependencies
 
