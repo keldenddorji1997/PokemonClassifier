@@ -7,6 +7,7 @@ import numpy as np
 from TheanoNN import NN
 import theano.tensor as T
 import theano
+# from sklearn.ensemble import ExtraTreesClassifier
 
 rng = np.random.RandomState(1234)
 
@@ -18,7 +19,7 @@ dataset = pd.read_csv(f)
 f.close()
 
 labels = dataset["Type 1"]
-# Dropped Generations column as it overfits the data rather than contributing much as a feature
+# Dropped Generations column as it overfits the data rather than contributing much as a feature (see below for etc.feature_importances_)
 # Dropped Total column as it is anyways calculated using the other features, hence would overfit
 X = dataset[["HP","Attack","Defense","Sp. Atk","Sp. Def","Speed"]]
 distinctLabels = np.array(labels.unique())
@@ -31,6 +32,12 @@ for i in labels:
     l.append(label2int[i])
 
 labels = np.array(l).astype(dtype=np.uint8)
+
+# etc = ExtraTreesClassifier()
+# etc.fit(X,labels)
+# print etc.feature_importances_
+#     HP           Attack      Defense    Spl. Atk   Spl. Def    Speed      Generation
+# [ 0.15094212  0.15045182  0.14142085  0.16435534  0.14503864  0.15237957  0.09541167 ]
 
 ndata = X.shape[0]
 # Split train-test data in the ratio 70:30
